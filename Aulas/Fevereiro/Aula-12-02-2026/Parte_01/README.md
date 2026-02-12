@@ -1,4 +1,4 @@
-# Teoria dos Grafos e Computabilidade - Aula 02
+# Teoria dos Grafos e Computabilidade - Aula 02 - Parte 01
 
 ## Problema proposto - 01
 
