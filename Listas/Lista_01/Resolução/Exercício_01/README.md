@@ -1,4 +1,4 @@
-# Teoria dos Grafos e Computabilidade - Aula 07
+# Teoria dos Grafos e Computabilidade - Lista 01
 
 ## Aula destinada à lista de exercícios 01 
 
