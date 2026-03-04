@@ -44,6 +44,16 @@ Seja $G$ um grafo simples com pelo menos dois vértices. Prove que $G$ deve cont
   - Como temos $n$ vértices, pelo **Princípio da Casa dos Pombos**, pelo menos dois vértices devem ter o mesmo grau.
 
 
+---
+
+## Exercício 02 (d)
+
+Uma string binária é uma sequência finita de 0s e 1s. O comprimento de uma string binária é o núumero
+total de símbolos que ocorrem nela.
+
+### Resolução
+
+<img width="1600" height="981" alt="image" src="https://github.com/user-attachments/assets/d99de5c8-7d60-4466-af0e-0ae91ebad00a" />
 
 
 
