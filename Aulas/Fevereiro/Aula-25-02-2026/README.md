@@ -18,25 +18,37 @@ O BFS geralmente utiliza uma fila (queue) para controlar a ordem de visitação 
 
 ### 2) Passos do algoritmo
 
-1. **Escolher ponto de partida:**  
-   Pegue um vértice inicial `v0` e marque como visitado.
+```
+todos_alcancados(grafo, v)
+   para todo v* e V
+      cor[v*] = branco
+   fim para
 
-2. **Preparar a fila:**  
-   Coloque `v0` em uma fila.
+   alcancados = []
+   se existe aresta de v para v
+      alcancados.insere(v)
+   fim se
 
-3. **Percorrer os vértices:**  
-   Enquanto a fila não estiver vazia:
-   - Tire o vértice da frente da fila (`v`).
-   - Olhe todos os vértices ligados a `v` (adjacentes).
-   - Para cada vértice adjacente `u`:
-     - Se `u` ainda não foi visitado:
-       - Marque `u` como visitado.
-       - Coloque `u` no final da fila.
+   f.insere(v)
+   cor[v] = cinza
+   
+   enquanto !f.vazio()
+      u = f.remove()
+      para todos u* e N[u]
+         se cor[u*] = branco
+            f.insere(u*)
+            alcancado.insere(u*)
+            cor[u*] = cinza
+         fim se
+      fim para
+      cor[u] = preto
+   fim enquanto
+   retorna alcancado
+fim algoritmo
 
-4. **Continuar até o fim:**  
-   Repita o processo até visitar todos os vértices que puder alcançar.
 
-> Para obter os vértices alcançados, basta inicializar um conjunto em que todo vértice visitado deve ser adicionado nele.
+
+```
 
 ### 3) Vértices que alcançavam $v$
 
