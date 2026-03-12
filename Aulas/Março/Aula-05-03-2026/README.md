@@ -12,32 +12,31 @@ em largura, pois através dos níveis é possível saber a distância dos vérti
 
 Lembrando que a distância, em grafos, representa o menor número de arestas de um caminho.
 
-Para a solução, será implementado um pseudocódigo utilizando $$d$$ como sendo a distância para outros vértices,
-e $$L$$ para ser um label.
-
 ---
 
 ```
-algoritmo {
+distancias_vertice(grafo, v)
+    para todo v* e V
+        cor[v*] = branco
+        d[v*] = infinito
+    fim para
 
-    para cada v ∈ V (d[v] = +infinito, L[v] = não visitado)
-    d[u] = 0
-    fila.inserir(u)
-    L[u] = em processo
+    d[v] = 0
+    f.insere(v)
+    cor[v] = cinza
 
-    while !fila.vazio() {
-
-          v.remover()
-          L[v] = visitado
-          para cada v* ∈ N(v)
-               se L[v*] = não visitado então
-                  d[v*] = min(d[v*], d[v] + 1)
-                  L[v*] = em processo
-                  fila.inserir(v*)
-               senão
-                  // Não faz nada
-    }
-}
+    enquanto !f.vazio()
+        u = f.remove()
+        para todo u* e N[u]
+            se cor[u*] = branco
+                d[u*] = min(d[u*], d[u] + 1)
+                cor[u*] = cinza
+            fim se
+        fim para
+        cor[u] = preto
+    fim enquanto
+fim algoritmo
+    
 ```
 
 ---
