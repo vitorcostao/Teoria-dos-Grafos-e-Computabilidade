@@ -6,26 +6,66 @@ Projetar uma solução para identificar o número de componentes conexos de um g
 
 ### Resolução
 
-Para resolver o problema é preciso entender os algoritmos de busca em grafos, como **DFS (Busca em Profundidade)** e **BFS (Busca em Largura)**, que permitem explorar todos os vértices conectados a um vértice inicial.
+#### Algoritmo usando a estrutura de dados pilha 
+```
+N_componentes_conexos(grafo)
+   para todo v e V
+      cor[v] = branco
+   fim para
 
-O processo consiste em:
+   ncc = 0
 
-1) Marcar todos os vértices do grafo como não visitados.
+   para todo v e V
+      se cor[v] = branco
+         ncc += 1
+         p.insere(v)
+         cor[v] = cinza
 
-2) Inicializar um contador de componentes conexos com zero.
+         enquanto !p.vazia()
+            u = p.remove()
+            para todo u* e N[u]
+               se cor[u*] = branco
+                  p.insere(u*)
+                  cor[u*] = cinza
+               fim se
+            fim para
+            cor[u] = preto
+         fim enquanto
+      fim se
+   retorna ncc
+fim algoritmo
+```
 
-3) Percorrer todos os vértices do grafo:
+#### Algoritmo usando recursão
+```
+N_componentes_conexos(grafo)
+   para todos v e V
+      cor[v] = branco
+   fim para
 
-   - Se um vértice ainda não foi visitado:
+   ncc = 0
 
-     - Incrementar o contador de componentes conexos.
+   para todo v e V
+      se cor[v] = branco
+         ncc += 1
+         DFS_Visita(grafo, v)
+      fim se
+   fim para
+   retorna ncc
+fim algoritmo
 
-     - Executar uma busca a partir desse vértice, visitando todos os vértices alcançáveis.
+DFS_Visita(grafo, u)
+   cor[u] = cinza
 
-4) Repetir o processo até que todos os vértices tenham sido visitados.
-
-Dessa forma, cada vez que se inicia uma nova busca a partir de um vértice não visitado, identifica-se um novo componente conexo. 
-O algoritmo termina quando todos os vértices já foram explorados, e o contador final representa o número total de componentes conexos do grafo.
+   para todo u* e N[u]
+      se cor[u*] = branco
+         DFS_Visita(grafo, u*)
+      fim se
+   fim para
+   cor[u] = preto
+fim algoritmo
+   
+```
 
 ### Observações
 
