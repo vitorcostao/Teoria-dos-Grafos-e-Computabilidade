@@ -47,3 +47,14 @@ distancia_min(grafo, predio_34, teatro_JP) -> Retorna Caminho
     retorna pilha
 fim algoritmo
 ```
+
+---
+
+### Resolição 02
+
+---
+
+### Resolição 03
+
+Para solucionar o problema, basta separar os vértices em conjuntos de acordo com a inicial dos nomes dos alunos e realizar
+combinações tomadas dois a dois para obter os pares possíveis.
