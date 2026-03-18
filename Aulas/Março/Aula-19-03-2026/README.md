@@ -29,7 +29,7 @@ fim algoritmo
 caminhamento(grafo, início) -> Retorna caminho
 
     se o grafo não for euleriano 
-        retorna
+        retorna nulo
     fim se
 
     pilha_caminho = [início]
