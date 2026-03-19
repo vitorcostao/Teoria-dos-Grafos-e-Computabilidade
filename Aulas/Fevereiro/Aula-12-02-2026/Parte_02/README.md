@@ -55,6 +55,6 @@ O número total de subgrafos para $G$ é a soma dos casos acima: $3 + 6 + 8 = 17
 <p align="center">
 $$\text{Número de arestas possíveis} = \frac{k \cdot (k-1)}{2}$$
 
-$$\text{Número total de subgrafos} = \sum_{i=0}^{k} \binom{k}{i} \ * 2^{\binom{i}{2}}$$
+$$\text{Número total de subgrafos} = \sum_{i=1}^{k} \binom{k}{i} \ * 2^{\binom{i}{2}}$$
 </p>
 ​
