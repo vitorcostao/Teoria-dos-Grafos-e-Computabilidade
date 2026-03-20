@@ -52,6 +52,8 @@ fim algoritmo
 
 ### Resolição 02
 
+Para solucionar o problema, basta realizar uma ordenação topológica entre as matérias
+
 ---
 
 ### Resolição 03

@@ -1,0 +1,31 @@
+DFS(grafo, alvo) -> Retorna booleano
+
+	para todo v e V
+		cor[v] = branco
+	fim para
+
+	resp = false
+
+	para todo v e V
+		se cor[v] = branco
+			p.insere(v)
+			cor[v] = cinza
+			enquanto !p.vazio()
+				u = p.remove()
+				se u == alvo
+					resp = true
+					retorna resp
+				fim se
+				para todo u* e N(u)
+					se cor[u*] = branco
+						p.insere(u*)
+						cor[u*] = cinza
+					fim se
+				fim para
+				cor[u] = preto
+			fim enquanto
+		fim se
+	fim para
+	retorna resp
+fim algoritmo
+	

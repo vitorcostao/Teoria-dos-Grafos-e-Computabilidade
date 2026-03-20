@@ -1,0 +1,24 @@
+distancias_vertice(grafo, v)
+    para todo v* e V
+        cor[v*] = branco
+        d[v*] = infinito
+    fim para
+
+    d[v] = 0
+    f.insere(v)
+    cor[v] = cinza
+
+    enquanto !f.vazio()
+        u = f.remove()
+        cor[u] = cinza
+
+        para todo u* e N[u]
+            se cor[u*] = branco
+                d[u*] = min(d[u*], d[u] + 1)
+                cor[u*] = cinza
+            fim se
+        fim para
+        cor[u] = preto
+    fim enquanto
+fim algoritmo
+    

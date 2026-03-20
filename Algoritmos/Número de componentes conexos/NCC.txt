@@ -1,0 +1,40 @@
+n_componentes_conexos(grafo) -> Retorna inteiro
+
+	para todo v e V
+		cor[v] = branco
+	fim para
+
+	n_comp = 0	
+
+	para todo v e V
+	   	se cor[v] =  branco
+			n_comp = n_comp + 1
+			p.insere(v)
+			cor[v] = cinza
+			
+			enquanto !p.vazio()
+				u = p.remove()
+				para todo u* e N(u)
+					se cor[u*] = branco
+						p.insere(u*)
+						cor[u*] = cinza
+					fim se
+				fim para
+				cor[u] = preto
+			fim enquanto
+		fim se
+	fim para
+	retorna n_comp
+fim algoritmo
+
+
+
+
+
+
+
+
+
+
+	
+	

@@ -1,0 +1,26 @@
+ordenacao_topologica(grafo) -> Array de vértices
+    para todo v ∈ V
+        se grau_in(v) = 0
+            f.insere(v)
+        fim se
+    fim para
+
+    visitados = []
+
+    enquanto !f.vazio()
+        u = f.remove()
+        visitados.append(u)
+        para todo u* ∈ N(u)
+            grau_in(u*) = grau_in(u*) - 1
+            se grau_in(u*) == 0
+                f.insere(u*)
+            fim se
+        fim para
+    fim enquanto
+
+    se len(visitados) ≠ |V|
+        ciclo
+    fim se
+
+    retorna visitados
+fim algoritmo

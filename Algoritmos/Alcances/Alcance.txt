@@ -1,0 +1,55 @@
+alcancados_por_v(grafo, início) -> Retornar array
+
+    para todo v ∈ V 
+        cor[v] = branco
+    fim para
+
+    alcancados = []
+    f.insere(início)
+    cor[início] = cinza
+    alcancados.add_end(início)
+
+    enquanto !f.vazio()
+        u = f.remove()
+
+        para todo u* ∈ N(u)
+            se cor[u*] = branco
+                f.insere(u*)
+                cor[u*] = cinza
+                alcancados.add_end(u*)
+            fim se
+        fim para
+
+        cor[u] = preto
+    fim enquanto
+
+    retorna alcancados
+fim algoritmo
+
+
+que_alcancam_v(grafo, início) -> Retornar array
+
+	gt = transpor(grafo)
+
+	para todo v e Vt
+		cor[v] = branco
+	fim para
+	
+	que_alcancam = []
+	f.insere(início)
+	cor[início] = cinza
+	que_alcancam.add_end(início)
+
+	enquanto !f.vazio()
+		u = f.remove()
+		para todo u* e N(u)
+			se cor[u*] = branco
+				f.insere(u*)
+				cor[u*] = cinza
+				que_alcancam.add_end(u*)
+			fim se
+		fim para
+		cor[u] = preto
+	fim enquanto
+	retorna que_alcancam
+fim algoritmo
