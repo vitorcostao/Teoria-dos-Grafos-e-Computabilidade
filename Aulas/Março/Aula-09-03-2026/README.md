@@ -35,7 +35,7 @@ seja conexo também.
 Um grafo direcionado pode ser:
 
  - Fortemente conexo: Quando existe caminho para quaisquer pares de vértices.
- - Semi-fortemente conexo: Quando existe um caminho de ida ou de volta entre os pares de vértices
+ - Semi-fortemente conexo: Para todo par (u, v), existe caminho de u→v ou de v→u (pelo menos um dos sentidos).
  - Fracamente conexo: Quando há caminho de ida e não há um de volta. 
 
 ---
