@@ -1,24 +1,26 @@
-distancias_vertice(grafo, v)
-    para todo v* e V
+distancias_vertice(G = (V, E), v)
+    para todo v* ∈ V
         cor[v*] = branco
         d[v*] = infinito
     fim para
 
     d[v] = 0
-    f.insere(v)
     cor[v] = cinza
+    f.insere(v)
 
     enquanto !f.vazio()
         u = f.remove()
-        cor[u] = cinza
 
-        para todo u* e N[u]
+        para todo u* ∈ N(u)
             se cor[u*] = branco
-                d[u*] = min(d[u*], d[u] + 1)
+                d[u*] = d[u] + 1
                 cor[u*] = cinza
+                f.insere(u*)
             fim se
         fim para
+
         cor[u] = preto
     fim enquanto
+
+    retornar d[ ]
 fim algoritmo
-    

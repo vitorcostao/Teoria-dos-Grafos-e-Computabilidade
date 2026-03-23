@@ -1,31 +1,25 @@
-DFS(grafo, alvo) -> Retorna booleano
+DFS_Recursivo(grafo)
 
 	para todo v e V
 		cor[v] = branco
 	fim para
 
-	resp = false
-
 	para todo v e V
 		se cor[v] = branco
-			p.insere(v)
-			cor[v] = cinza
-			enquanto !p.vazio()
-				u = p.remove()
-				se u == alvo
-					resp = true
-					retorna resp
-				fim se
-				para todo u* e N(u)
-					se cor[u*] = branco
-						p.insere(u*)
-						cor[u*] = cinza
-					fim se
-				fim para
-				cor[u] = preto
-			fim enquanto
+			DFS_Visita(grafo, v)
 		fim se
 	fim para
-	retorna resp
 fim algoritmo
-	
+
+DFS_Visita(grafo, v)
+	cor[v] = cinza
+	para todo u e N(v)
+		se cor[u] = branco
+			DFS_Visita(grafo, u)
+		senão se cor[v*] = cinza e v* != pai
+			// Detectou um ciclo
+		fim se
+	fim para 
+	cor[v] = preto
+fim algoritmo
+
