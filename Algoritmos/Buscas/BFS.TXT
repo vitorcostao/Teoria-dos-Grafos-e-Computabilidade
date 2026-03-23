@@ -1,4 +1,4 @@
-BFS(grafo, alvo) -> Retorna booleano
+BFS(grafo, alvo)
 
 	para todo v e V
 		cor[v] = branco
@@ -12,10 +12,6 @@ BFS(grafo, alvo) -> Retorna booleano
 			cor[v] = cinza
 			enquanto !f.vazio()
 				u = f.remove()
-				se u == alvo
-					resp = true
-					retorna resp
-				fim se
 				para todo u* e N(u)
 					se cor[u*] = branco
 						f.insere(u*)
