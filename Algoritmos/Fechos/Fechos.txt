@@ -1,0 +1,26 @@
+DFS(v, grafo, visitados)
+
+    visitados.add(v)
+    cor[v] = cinza
+
+    para todo v* e N(v)
+        se cor[v*] = branco
+            dfs(v*, grafo, visitados)
+        fim se
+    fim para
+
+    cor[v] = preto
+fim algoritmo
+
+fecho_direto(v, grafo)
+    visitados = []
+    DFS(v, grafo, visitados)
+    return visitados
+fim algoritmo
+
+fecho_inverso(v, grafo)
+    visitados = []
+    gt = grafo.transposto()
+    DFS(v, gt, visitados)
+    return visitados
+fim algoritmo

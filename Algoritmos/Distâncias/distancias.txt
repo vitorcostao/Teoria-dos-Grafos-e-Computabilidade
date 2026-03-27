@@ -24,3 +24,4 @@ distancias_vertice(G = (V, E), v)
 
     retornar d[ ]
 fim algoritmo
+

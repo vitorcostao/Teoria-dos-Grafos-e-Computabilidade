@@ -4,8 +4,6 @@ BFS(grafo, alvo)
 		cor[v] = branco
 	fim para
 
-	resp = false
-
 	para todo v e V
 		se cor[v] = branco
 			f.insere(v)
@@ -22,5 +20,4 @@ BFS(grafo, alvo)
 			fim enquanto
 		fim se
 	fim para
-	retorna resp
 fim algoritmo
