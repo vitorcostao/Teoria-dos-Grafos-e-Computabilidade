@@ -1,0 +1,1 @@
+# Teoria dos Grafos e Computabilidade - Aula 26 (Lista de Exercícios 04)
